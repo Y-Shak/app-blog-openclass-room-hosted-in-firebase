@@ -1,0 +1,24 @@
+
+
+<div class="col-12 offset-m-2 col-m-8 offset-lg-2 col-lg-8 offset-xl-2 col-xl-8">
+    <div class="container p-3 my-3 alert"
+        role="alert"
+        [ngClass] = "{'alert-success' : getIfLikesStatement(index) == 'likesMore',
+                        'alert-danger' : getIfLikesStatement(index) =='dislikesMore' }"
+    >
+        <div class="card-header">{{post.title}} <span>{{post.created_at | date:'EE dd MMMM YY, HH:MM' :'' : 'fr-FR'}}</span></div>
+        <div class="card-body">{{post.content}}</div>
+        <div class="card-footer">
+            <button
+                (click) = "onLike(index)"
+            ><i class="fa fa-thumbs-up"></i>
+            </button>
+            {{post.loveIts}}
+            <button
+                (click) = "onDisLike(index)"
+            > <i class="fa fa-thumbs-down"></i>
+            </button>
+            {{post.dontLoveIts}}
+        </div> 
+    </div>
+</div>
